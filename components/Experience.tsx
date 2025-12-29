@@ -4,11 +4,11 @@ import SectionBackground from "./SectionBackground";
 
 export default function Experience() {
     return (
-        <section id="experience" className="relative py-24 bg-[#050511] overflow-hidden">
+        <section id="experience" className="relative min-h-screen flex items-center justify-center py-24 bg-[#050511] overflow-hidden">
             {/* Use a different gradient or background style if needed, reusing SectionBackground for consistency */}
             <SectionBackground />
             <SectionReveal>
-                <div className="max-w-4xl mx-auto px-6 relative z-10">
+                <div className="w-full max-w-4xl mx-auto px-6 relative z-10">
                     <h2 className="text-3xl font-semibold mb-12 text-white text-center">Experience</h2>
                     <div className="space-y-12">
                         {experiences.map((exp, index) => (

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
 
 const navItems = [
     { name: "Home", href: "/", icon: Home },
@@ -13,23 +14,45 @@ const navItems = [
     { name: "Projects", href: "#projects", icon: Code },
     { name: "Education", href: "#education", icon: GraduationCap },
     { name: "Skills", href: "#skills", icon: Wrench },
-    { name: "Blog", href: "#blog", icon: LinkIcon },
 ];
 
 export default function Navbar() {
+    const [activeSection, setActiveSection] = useState("home");
     const pathname = usePathname();
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveSection(entry.target.id);
+                    }
+                });
+            },
+            { threshold: 0.5 } // Trigger when 50% of the section is visible
+        );
+
+        const sections = document.querySelectorAll("section[id]");
+        sections.forEach((section) => observer.observe(section));
+
+        return () => sections.forEach((section) => observer.unobserve(section));
+    }, []);
 
     return (
         <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-fit">
             <nav className="flex items-center gap-1 p-2 rounded-full bg-transparent">
                 {navItems.map((item) => {
                     const Icon = item.icon;
-                    const isActive = pathname === item.href || (item.href.startsWith("#") && false); // Simple active check, can be improved for scroll spy
+                    // Extract ID from href (e.g., "#about" -> "about") or use "home" for "/"
+                    const sectionId = item.href === "/" ? "home" : item.href.replace("#", "");
+
+                    const isActive = activeSection === sectionId;
 
                     return (
                         <Link
                             key={item.name}
                             href={item.href}
+                            onClick={() => setActiveSection(sectionId)}
                             className={cn(
                                 "relative flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-colors hover:text-white",
                                 isActive ? "text-white" : "text-gray-400"
