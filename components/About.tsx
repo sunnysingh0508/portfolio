@@ -2,6 +2,7 @@
 import { user } from "@/lib/data";
 import SectionReveal from "./SectionReveal";
 import SectionBackground from "./SectionBackground";
+import TiltCard from "./TiltCard";
 
 export default function About() {
     return (
@@ -20,10 +21,12 @@ export default function About() {
                             </div>
                         </div>
                         {/* Placeholder for image or graphic */}
-                        <div className="bg-[#14181C] h-64 md:h-80 rounded-xl border border-white/5 flex items-center justify-center relative overflow-hidden group">
-                            <div className="absolute inset-0 bg-gradient-to-br from-gray-800/20 to-transparent group-hover:opacity-75 transition" />
-                            <span className="text-gray-600 font-mono text-sm">Image / Graphic Placeholder</span>
-                        </div>
+                        <TiltCard className="h-full">
+                            <div className="bg-[#14181C] h-64 md:h-80 rounded-xl border border-white/5 flex items-center justify-center relative overflow-hidden group">
+                                <div className="absolute inset-0 bg-gradient-to-br from-gray-800/20 to-transparent group-hover:opacity-75 transition" />
+                                <span className="text-gray-600 font-mono text-sm">Image / Graphic Placeholder</span>
+                            </div>
+                        </TiltCard>
                     </div>
                 </SectionReveal>
             </div>

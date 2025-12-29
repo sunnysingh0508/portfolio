@@ -1,5 +1,6 @@
 import { experiences } from "@/lib/data";
 import SectionReveal from "./SectionReveal";
+import TiltCard from "./TiltCard";
 import SectionBackground from "./SectionBackground";
 
 export default function Experience() {
@@ -16,20 +17,22 @@ export default function Experience() {
                                 {/* Dot on timeline */}
                                 <div className="absolute top-0 left-0 -translate-x-1/2 w-4 h-4 rounded-full bg-[#D946EF] shadow-[0_0_10px_rgba(217,70,239,0.5)]" />
 
-                                <div className="bg-white/5 border border-white/5 rounded-2xl p-6 sm:p-8 hover:bg-white/10 transition duration-300">
-                                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                                        <div>
-                                            <h3 className="text-xl font-bold text-white">{exp.role}</h3>
-                                            <p className="text-[#D946EF] font-medium">{exp.company}</p>
+                                <TiltCard className="h-full">
+                                    <div className="bg-white/5 border border-white/5 rounded-2xl p-6 sm:p-8 hover:bg-white/10 transition duration-300">
+                                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                                            <div>
+                                                <h3 className="text-xl font-bold text-white">{exp.role}</h3>
+                                                <p className="text-[#D946EF] font-medium">{exp.company}</p>
+                                            </div>
+                                            <div className="text-gray-500 text-sm mt-2 sm:mt-0 font-mono">
+                                                {exp.period} | {exp.location}
+                                            </div>
                                         </div>
-                                        <div className="text-gray-500 text-sm mt-2 sm:mt-0 font-mono">
-                                            {exp.period} | {exp.location}
-                                        </div>
+                                        <p className="text-gray-400 leading-relaxed">
+                                            {exp.description}
+                                        </p>
                                     </div>
-                                    <p className="text-gray-400 leading-relaxed">
-                                        {exp.description}
-                                    </p>
-                                </div>
+                                </TiltCard>
                             </div>
                         ))}
                     </div>
