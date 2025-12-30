@@ -2,7 +2,7 @@ import SectionBackground from "./SectionBackground";
 
 export default function Hero() {
     return (
-        <section className="relative h-screen flex items-center justify-center bg-[#050511] overflow-hidden">
+        <section id="home" className="relative h-screen flex items-center justify-center bg-[#050511] overflow-hidden">
 
             <SectionBackground />
 

@@ -11,9 +11,9 @@ const navItems = [
     { name: "Home", href: "/", icon: Home },
     { name: "About", href: "#about", icon: User },
     { name: "Experience", href: "#experience", icon: Briefcase },
+    { name: "Skills", href: "#skills", icon: Wrench },
     { name: "Projects", href: "#projects", icon: Code },
     { name: "Education", href: "#education", icon: GraduationCap },
-    { name: "Skills", href: "#skills", icon: Wrench },
 ];
 
 export default function Navbar() {
