@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { ProfileProvider } from "@/context/ProfileContext";
+import FloatingEditButton from "@/components/FloatingEditButton";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -34,8 +36,11 @@ export default function RootLayout({
             <body
                 className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} antialiased bg-[#050511]`}
             >
-                <Navbar />
-                {children}
+                <ProfileProvider>
+                    <Navbar />
+                    {children}
+                    <FloatingEditButton />
+                </ProfileProvider>
             </body>
         </html>
     );

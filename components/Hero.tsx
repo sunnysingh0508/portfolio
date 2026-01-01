@@ -3,10 +3,12 @@
 import { motion } from "framer-motion";
 import { Mail, Github, Linkedin, Twitter, MapPin } from "lucide-react";
 import Image from "next/image";
-import { user } from "@/lib/data";
+import { useProfile } from "@/context/ProfileContext";
 import SectionBackground from "./SectionBackground";
 
 export default function Hero() {
+    const { user } = useProfile();
+
     return (
         <section
             id="home"

@@ -1,10 +1,12 @@
+"use client";
 
-import { user } from "@/lib/data";
+import { useProfile } from "@/context/ProfileContext";
 import SectionReveal from "./SectionReveal";
 import SectionBackground from "./SectionBackground";
 import TiltCard from "./TiltCard";
 
 export default function About() {
+    const { user } = useProfile();
     return (
         <section id="about" className="relative min-h-screen flex items-center justify-center py-24 bg-[#050511] overflow-hidden">
             <SectionBackground />
