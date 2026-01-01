@@ -4,39 +4,39 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+    variable: "--font-geist-sans",
+    subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+    variable: "--font-geist-mono",
+    subsets: ["latin"],
 });
 
 const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair-display",
-  subsets: ["latin"],
-  weight: "400",
+    variable: "--font-playfair-display",
+    subsets: ["latin"],
+    weight: "400",
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio | Design & Scale",
-  description: "Buidling modern software systems and AI products.",
+    title: "Portfolio | Design & Scale",
+    description: "Buidling modern software systems and AI products.",
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en" className="scroll-smooth">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} antialiased bg-[#050511]`}
-      >
-        <Navbar />
-        {children}
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en" className="scroll-smooth">
+            <body
+                className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} antialiased bg-[#050511]`}
+            >
+                <Navbar />
+                {children}
+            </body>
+        </html>
+    );
 }
