@@ -69,7 +69,81 @@ export function TechLine({ className, delay = 0, mouseX, mouseY }: ShapeProps) {
                 ease: "easeInOut"
             }}
         />
-    )
+    );
+}
+
+export function PlusShape({ className, size = "w-12 h-12", delay = 0, duration = 15, mouseX, mouseY }: ShapeProps) {
+    const rotateX = useTransform(mouseY || new MotionValue(0), [-500, 500], [30, -30]);
+    const rotateY = useTransform(mouseX || new MotionValue(0), [-500, 500], [-30, 30]);
+
+    return (
+        <motion.div
+            className={`absolute ${className} ${size} perspective-1000`}
+            style={{
+                transformStyle: "preserve-3d",
+                rotateX: mouseX ? rotateX : 0,
+                rotateY: mouseY ? rotateY : 0
+            }}
+            animate={{
+                rotateZ: [0, 360],
+                rotateY: [0, 360]
+            }}
+            transition={{
+                duration: duration,
+                repeat: Infinity,
+                ease: "linear",
+                delay: delay,
+            }}
+        >
+            {/* Horizontal Bar */}
+            <div className="absolute top-1/2 left-0 w-full h-1/4 -translate-y-1/2 bg-cyan-500/20 border border-cyan-400/40 backdrop-blur-sm"
+                style={{ transform: "translateZ(0)" }} />
+
+            {/* Vertical Bar */}
+            <div className="absolute top-0 left-1/2 w-1/4 h-full -translate-x-1/2 bg-cyan-500/20 border border-cyan-400/40 backdrop-blur-sm"
+                style={{ transform: "translateZ(0)" }} />
+
+            {/* Glow */}
+            <div className="absolute inset-0 bg-cyan-400/10 blur-md" />
+        </motion.div>
+    );
+}
+
+export function LShape({ className, size = "w-16 h-16", delay = 0, duration = 12, mouseX, mouseY }: ShapeProps) {
+    const rotateX = useTransform(mouseY || new MotionValue(0), [-500, 500], [45, -45]);
+    const rotateY = useTransform(mouseX || new MotionValue(0), [-500, 500], [-45, 45]);
+
+    return (
+        <motion.div
+            className={`absolute ${className} ${size} perspective-1000`}
+            style={{
+                transformStyle: "preserve-3d",
+                rotateX: mouseX ? rotateX : 0,
+                rotateY: mouseY ? rotateY : 0
+            }}
+            animate={{
+                rotateZ: [0, -360],
+                rotateX: [0, 180, 360]
+            }}
+            transition={{
+                duration: duration,
+                repeat: Infinity,
+                ease: "linear",
+                delay: delay,
+            }}
+        >
+            {/* Vertical Segment */}
+            <div className="absolute top-0 left-0 w-1/4 h-full bg-purple-500/20 border border-purple-400/40 backdrop-blur-sm"
+                style={{ transform: "translateZ(0)" }} />
+
+            {/* Horizontal Segment */}
+            <div className="absolute bottom-0 left-0 w-full h-1/4 bg-purple-500/20 border border-purple-400/40 backdrop-blur-sm"
+                style={{ transform: "translateZ(0)" }} />
+
+            {/* Glow */}
+            <div className="absolute inset-0 bg-purple-400/10 blur-md" />
+        </motion.div>
+    );
 }
 
 export function ParticleGroup({ className, mouseX, mouseY }: ShapeProps) {

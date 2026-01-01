@@ -2,7 +2,7 @@
 
 import { useMotionValue, useTransform, motion } from "framer-motion";
 import { useEffect } from "react";
-import { WireframeCube, TechLine, ParticleGroup } from "./GeometricShapes";
+import { WireframeCube, TechLine, ParticleGroup, PlusShape, LShape } from "./GeometricShapes";
 
 export default function SectionBackground() {
     const mouseX = useMotionValue(0);
@@ -38,6 +38,13 @@ export default function SectionBackground() {
             <TechLine className="top-1/4 left-1/4 w-96 rotate-45" delay={0} mouseX={mouseX} mouseY={mouseY} />
             <TechLine className="bottom-1/3 right-1/4 w-64 -rotate-12" delay={1.5} mouseX={mouseX} mouseY={mouseY} />
             <TechLine className="top-1/2 right-10 w-48 rotate-90" delay={3} mouseX={mouseX} mouseY={mouseY} />
+
+            {/* New Shapes */}
+            <PlusShape className="top-20 right-1/4 opacity-30 text-cyan-400" size="w-12 h-12" delay={1} mouseX={mouseX} mouseY={mouseY} />
+            <PlusShape className="bottom-1/3 left-20 opacity-20 text-purple-400" size="w-16 h-16" delay={2.5} duration={20} mouseX={mouseX} mouseY={mouseY} />
+
+            <LShape className="top-1/3 left-1/3 opacity-25 text-cyan-300" size="w-20 h-20" delay={0.5} mouseX={mouseX} mouseY={mouseY} />
+            <LShape className="bottom-20 right-1/3 opacity-20 text-purple-300" size="w-24 h-24" delay={3} duration={18} mouseX={mouseX} mouseY={mouseY} />
 
             {/* Interactive Ambient Glow */}
             <motion.div
