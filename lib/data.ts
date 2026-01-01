@@ -6,6 +6,7 @@ export const user = {
     location: "Aligarh, India",
     email: "sunnykashyap1608@gmail.com",
     linkedin: "Linkedin/Portfolio", // Placeholder as per resume
+    avatar: "/profile_placeholder_1767289197656.png"
 };
 
 export const experiences = [

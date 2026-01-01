@@ -23,15 +23,16 @@ export default function Hero() {
                     transition={{ duration: 0.5 }}
                     className="relative mb-8 group"
                 >
-                    <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white/5 ring-1 ring-white/10 shadow-2xl">
-                        {/* Using the generated placeholder image - update path if needed or use a real image */}
-                        <Image
-                            src="/profile_placeholder_1767289197656.png"
-                            alt={user.name}
-                            fill
-                            className="object-cover"
-                            priority
-                        />
+                    <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-transparent p-1 bg-gradient-to-tr from-cyan-500 to-purple-500 shadow-lg shadow-cyan-500/20">
+                        <div className="relative w-full h-full rounded-full overflow-hidden bg-[#0A0A0A]">
+                            <Image
+                                src={user.avatar}
+                                alt={user.name}
+                                fill
+                                className="object-cover"
+                                priority
+                            />
+                        </div>
                     </div>
 
                     {/* Status Badge */}
