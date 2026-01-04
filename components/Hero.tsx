@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, Twitter, MapPin } from "lucide-react";
+import { Mail, Github, Linkedin, MapPin } from "lucide-react";
 import Image from "next/image";
 import { useProfile } from "@/context/ProfileContext";
 import SectionBackground from "./SectionBackground";
@@ -81,7 +81,7 @@ export default function Hero() {
                         { icon: Mail, href: `mailto:${user.email}`, label: "Email" },
                         { icon: Linkedin, href: user.linkedin, label: "LinkedIn" },
                         { icon: Github, href: "https://github.com", label: "GitHub" },
-                        { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+
                     ].map((social, index) => (
                         <a
                             key={index}
