@@ -12,7 +12,7 @@ export default function Projects() {
                     <h2 className="text-3xl font-semibold mb-12 text-white">Projects</h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {projects.map((project, i) => (
-                            <ProjectCard key={i} {...project} />
+                            <ProjectCard key={i} project={project} />
                         ))}
                     </div>
                 </SectionReveal>

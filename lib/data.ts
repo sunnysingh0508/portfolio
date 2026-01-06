@@ -101,6 +101,7 @@ export const projects = [
         description: "Convert long videos into structured notes using OpenAI and Whisper.",
         tech: ["Next.js", "OpenAI", "Tailwind"],
         link: "#",
+        github: "https://github.com/sunnysingh0508/bsdk-ai",
         color: "from-purple-500 to-blue-500"
     },
     {
@@ -108,6 +109,7 @@ export const projects = [
         description: "Real-time analytics platform for tracking user engagement and revenue metrics.",
         tech: ["React", "Tremor", "PostgreSQL"],
         link: "#",
+        github: "#",
         color: "from-green-400 to-cyan-500"
     },
     {
@@ -115,6 +117,7 @@ export const projects = [
         description: "Scalable headless e-commerce solution with advanced filtering.",
         tech: ["Next.js", "Shopify", "Stripe"],
         link: "#",
+        github: "#",
         color: "from-orange-400 to-red-500"
     }
 ];
