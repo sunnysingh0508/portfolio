@@ -2,7 +2,7 @@ export const user = {
     name: "Sunny Singh",
     role: "Full Stack Developer",
     secondaryRole: "Dedicated Teacher & Tech Enthusiast", // Added for context from resume
-    about: "I am a dedicated and enthusiastic teacher with a passion for education. My goal is to utilize my knowledge and skills in a teaching environment to foster learning and development among students. I strive for growth and improvement both personally and professionally, aiming to contribute effectively to the educational community.",
+    about: "I am an AI & Machine Learning engineering student with a strong interest in learning and teaching. My journey in technology started early through hands-on experience with computers and continuous self-driven learning. This has helped me build a clear technical mindset and understand how systems work in real-world situations, not just in theory.\n\nI enjoy sharing knowledge and helping others learn and grow. I focus on improving my skills step by step, staying consistent, and building strong fundamentals. My goal is to use my technical knowledge and passion for education to contribute positively to a learning-focused environment while continuing to grow both personally and professionally.",
     location: "Aligarh, India",
     email: "sunnykashyap1608@gmail.com",
     linkedin: "Linkedin/Portfolio", // Placeholder as per resume

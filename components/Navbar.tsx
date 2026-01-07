@@ -8,8 +8,9 @@ import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 
 const navItems = [
-
     { name: "About", href: "#about", icon: User },
+
+
     { name: "Experience", href: "#experience", icon: Briefcase },
     { name: "Skills", href: "#skills", icon: Wrench },
     { name: "Projects", href: "#projects", icon: Code },

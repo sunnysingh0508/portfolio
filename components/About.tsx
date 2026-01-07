@@ -15,7 +15,7 @@ export default function About() {
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div>
                             <h2 className="text-3xl font-semibold mb-6 text-white">About Me</h2>
-                            <p className="text-gray-400 text-lg leading-relaxed">
+                            <p className="text-gray-400 text-lg leading-relaxed whitespace-pre-line">
                                 {user.about}
                             </p>
                             <div className="mt-8">
