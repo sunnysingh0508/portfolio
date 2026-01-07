@@ -1,13 +1,16 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Mail, Github, Linkedin, MapPin } from "lucide-react";
 import Image from "next/image";
 import { useProfile } from "@/context/ProfileContext";
 import SectionBackground from "./SectionBackground";
+import GitHubCard from "./GitHubCard";
+import { useState } from "react";
 
 export default function Hero() {
     const { user } = useProfile();
+    const [showGitHub, setShowGitHub] = useState(false);
 
     return (
         <section
@@ -80,25 +83,61 @@ export default function Hero() {
                     {[
                         { icon: Mail, href: `mailto:${user.email}`, label: "Email" },
                         { icon: Linkedin, href: user.linkedin, label: "LinkedIn" },
-                        { icon: Github, href: "https://github.com", label: "GitHub" },
+                        { icon: Github, href: "#", label: "GitHub", onClick: () => setShowGitHub(true) },
 
                     ].map((social, index) => (
-                        <a
-                            key={index}
-                            href={social.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors group"
-                        >
-                            <social.icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                            <span className="font-medium hidden md:inline">{social.label}</span>
-                        </a>
+                        social.onClick ? (
+                            <button
+                                key={index}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    social.onClick();
+                                }}
+                                className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors group"
+                            >
+                                <social.icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                                <span className="font-medium hidden md:inline">{social.label}</span>
+                            </button>
+                        ) : (
+                            <a
+                                key={index}
+                                href={social.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors group"
+                            >
+                                <social.icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                                <span className="font-medium hidden md:inline">{social.label}</span>
+                            </a>
+                        )
                     ))}
                 </motion.div>
             </div>
 
             {/* Minimal Grid Background Accent */}
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)] pointer-events-none" />
+
+            {/* GitHub Card Modal */}
+            <AnimatePresence>
+                {showGitHub && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+                        onClick={() => setShowGitHub(false)}
+                    >
+                        <motion.div
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <GitHubCard />
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
 
         </section>
     );

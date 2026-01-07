@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "tailwind-scrollbar";
 
 @theme {
   --color-background: #050511;
@@ -21,4 +22,20 @@ body {
   color: var(--color-foreground);
   font-family: var(--font-sans), sans-serif;
   overflow-x: hidden;
+}
+
+/* Custom Scrollbar for GitHub Calendar */
+.github-calendar-wrapper *::-webkit-scrollbar {
+  height: 6px !important;
+  width: 6px !important;
+}
+
+.github-calendar-wrapper *::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+.github-calendar-wrapper *::-webkit-scrollbar-thumb {
+  background-color: #374151 !important;
+  /* gray-700 */
+  border-radius: 20px !important;
 }
