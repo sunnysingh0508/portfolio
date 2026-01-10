@@ -13,7 +13,7 @@ export default function Education() {
                     <div className="grid gap-6 md:grid-cols-2">
                         {education.map((edu, index) => (
                             <TiltCard key={index} className="h-full">
-                                <div className="group relative bg-[#14181C] border border-white/5 p-6 rounded-2xl overflow-hidden hover:border-white/10 transition h-full">
+                                <div className="group relative bg-[#14181C]/20 backdrop-blur-md border border-white/5 p-6 rounded-2xl overflow-hidden hover:border-white/10 transition h-full">
                                     <div className="absolute inset-0 bg-gradient-to-br from-[#D946EF]/5 to-transparent opacity-0 group-hover:opacity-100 transition" />
                                     <div className="relative z-10">
                                         <h3 className="text-xl font-bold text-white mb-2">{edu.institution}</h3>
