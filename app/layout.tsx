@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { ProfileProvider } from "@/context/ProfileContext";
 import FloatingEditButton from "@/components/FloatingEditButton";
+import Logo from "@/components/Logo";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -24,6 +25,9 @@ const playfairDisplay = Playfair_Display({
 export const metadata: Metadata = {
     title: "Portfolio | Design & Scale",
     description: "Buidling modern software systems and AI products.",
+    icons: {
+        icon: "/logo.png",
+    },
 };
 
 export default function RootLayout({
@@ -37,6 +41,7 @@ export default function RootLayout({
                 className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} antialiased bg-[#050511]`}
             >
                 <ProfileProvider>
+                    <Logo />
                     <Navbar />
                     {children}
                     <FloatingEditButton />
