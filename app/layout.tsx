@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "Portfolio | Design & Scale",
     description: "Buidling modern software systems and AI products.",
     icons: {
-        icon: "/logo.png",
+        icon: "/brand-logo.png",
     },
 };
 
