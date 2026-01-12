@@ -118,6 +118,17 @@ export default function EditProfileModal({ isOpen, onClose }: EditProfileModalPr
                         />
                     </div>
 
+                    <div>
+                        <label className="block text-sm font-medium text-gray-400 mb-1">LinkedIn URL</label>
+                        <input
+                            type="text"
+                            value={formData.linkedin}
+                            onChange={(e) => setFormData({ ...formData, linkedin: e.target.value })}
+                            className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
+                            placeholder="https://linkedin.com/in/username"
+                        />
+                    </div>
+
 
 
                     <div className="flex gap-3 mt-6">
