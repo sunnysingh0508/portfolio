@@ -58,7 +58,13 @@ export const skills = {
         "Basic computer knowledge",
         "Microsoft Office tools",
         "Tally",
-        "Basic Accounting Software"
+        "Basic Accounting Software",
+        "HTML5, CSS3, JavaScript (ES6+)",
+        "TypeScript",
+        "React.js",
+        "Next.js (App Router)",
+        "Tailwind CSS",
+        "Responsive Web Design"
     ],
     languages: [
         { name: "English", level: "Advanced" },
